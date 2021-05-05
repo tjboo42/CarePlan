@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CarePlan.Models.ViewModels.RecordVM>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Care Plan Records List</h2>
+        </div>
+        <div class="col-6" style="text-align:right">
+            <button type="button" class="btn btn-info" onclick="onShowModal();">Add New Record</button>
+        </div>
+    </div>
+    <br />
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Record Name
+                    </th>
+                    <th>
+                        Patient Name
+                    </th>
+                    <th>
+                        User Name
+                    </th>
+                    <th>
+                        Actual Start Date/Time
+                    </th>
+                    <th>
+                        Target Date/Time
+                    </th>
+                    <th>
+                        Reason
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                    <th>
+                        Completed
+                    </th>
+                    <th>
+                        EndDateTime
+                    </th>
+                    <th>
+                        Outcome
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td width="9%">@item.RecordTitle</td>
+                        <td width="9%">@item.PatientName</td>
+                        <td width="9%">@item.UserName</td>
+                        <td width="9%">@item.ActualStartDateTime</td>
+                        <td width="9%">@item.TargetDateTime</td>
+                        <td width="9%">@item.Reason</td>
+                        <td width="9%">@item.RecordTitle</td>
+                        <td width="9%">@item.Action</td>
+                        <td width="9%">@item.Completed</td>
+                        <td width="9%">@item.EndDateTime</td>
+                        <td width="9%">@item.Outcome</td>
+                        <td width="9%">
+                            <div class="w-100 btn-group" role="group">
+                                <a asp-controller="Record" asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Update</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    { <h3>No Items created</h3>}
+</div>
+<partial name="_AddEditRecord" />
+

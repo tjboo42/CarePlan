@@ -1,0 +1,58 @@
+﻿<div class="modal fade" role="dialog" id="recordInput" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="recordForm" autocomplete="off" novalidate="novalidate">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add/ Edit Record</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" maxlength="450" class="form-control" id="title" />
+                    </div>
+                    <div class="form-group">
+                        <label for="patientName">Patient Name</label>
+                        <input type="text" maxlength="450" class="form-control" id="patientName"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input type="text" maxlength="450" class="form-control" id="userName"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Actual Start Date/Time</label>
+                        <input class="form-control" id="startDate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="targetDate">Target Date/Time</label>
+                        <input class="form-control" id="targetDate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Reason</label>
+                        <input type="text" maxlength="1000" class="form-control" id="reason" />
+                    </div>
+                    <div class="form-group">
+                        <label for="action">Action</label>
+                        <input type="text" maxlength="1000" class="form-control" id="action" />
+                    </div>
+                    <div class="form-group">
+                        <label for="completed">Completed?</label>
+                        <input type="checkbox" class="form-control" id="completed" />
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date/Time</label>
+                        <input class="form-control" id="endDate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="outcome">Outcome</label>
+                        <input type="text" maxlength="1000" class="form-control" id="outcome" />
+                    </div>
+                    <input type="hidden" id="id" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="onCloseModal();">Close</button> &nbsp;
+                    <button type="button" id="btnSubmit" class="btn btn-success" onclick="onSubmitForm();">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
